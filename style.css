@@ -1076,16 +1076,19 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background: var(--bg-primary);
+            background: rgba(13, 13, 13, 0.98);
             z-index: 999;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: 30px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .mobile-menu.active {
             display: flex;
+            opacity: 1;
         }
 
         .mobile-menu a {
@@ -1093,11 +1096,13 @@
             text-decoration: none;
             font-size: 1.5rem;
             font-family: var(--font-heading);
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
+            letter-spacing: 3px;
         }
 
         .mobile-menu a:hover {
             color: var(--color-gold);
+            transform: scale(1.05);
         }
 
         /* Responsive */
@@ -1137,8 +1142,13 @@
             }
 
             .hero-title {
-                font-size: 3rem;
-                letter-spacing: 8px;
+                font-size: 2.5rem;
+                letter-spacing: 5px;
+            }
+
+            .hero-subtitle {
+                font-size: 0.9rem;
+                letter-spacing: 2px;
             }
 
             .hero-japanese {
@@ -1146,22 +1156,80 @@
                 letter-spacing: 4px;
             }
 
+            .hero-cta {
+                padding: 14px 30px;
+                font-size: 0.8rem;
+                letter-spacing: 2px;
+            }
+
             section {
-                padding: 60px 20px;
+                padding: 50px 15px;
             }
 
             .section-header h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+
+            .section-header p {
+                font-size: 0.95rem;
             }
 
             .classes-grid,
-            .instructors-grid,
-            .gallery-grid {
+            .instructors-grid {
                 grid-template-columns: 1fr;
             }
 
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .gallery-item {
+                aspect-ratio: 1/1;
+            }
+
+            .class-card {
+                padding: 30px 20px;
+            }
+
+            .instructor-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .instructor-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .about-content h3 {
+                font-size: 1.8rem;
+            }
+
+            .about-content p {
+                font-size: 0.95rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-info h3 {
+                font-size: 1.5rem;
+            }
+
+            .contact-form {
+                padding: 25px 20px;
+            }
+
             .sponsors-grid {
-                gap: 30px;
+                gap: 20px;
+                flex-direction: column;
+            }
+
+            .sponsor-logo {
+                width: 120px;
+                height: 60px;
             }
 
             .footer-content {
@@ -1173,18 +1241,55 @@
             .footer-links {
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 20px;
             }
 
-            /* Hide weapons on mobile */
-            .katana-left,
-            .katana-right,
-            .jo-left,
-            .jo-right {
-                display: none;
+            .social-links {
+                justify-content: center;
+            }
+
+            .map-placeholder img {
+                width: 100% !important;
+                height: auto !important;
             }
 
             .center-glow {
-                width: 300px;
-                height: 300px;
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+                letter-spacing: 3px;
+            }
+
+            .hero-japanese {
+                font-size: 0.9rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
+            .sponsor-logo {
+                width: 100px;
+                height: 50px;
+            }
+
+            .social-links a {
+                width: 50px;
+                height: 50px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 12px;
             }
         }

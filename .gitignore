@@ -1,0 +1,24 @@
+# Immagini originali - nascoste su GitHub, solo versioni cifrate .enc vengono pushate
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+*.JPG
+*.PNG
+*.WEBP
+*.GIF
+!*.enc
+
+# Ma conserva i .enc (sono cifrati, non visualizzabili come immagini su GitHub)
+!*.enc
+
+# Script di cifratura locale (contiene chiave, non pubblicare)
+encrypt_images.py
+fix_html.py
+decrypt_key.txt
+
+# OS
+desktop.ini
+Thumbs.db
+.DS_Store
